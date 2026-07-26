@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>You're offline — Wedding Planner</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500&display=swap');
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fbf8f1;
+      color: #22281f;
+      font-family: 'Inter', sans-serif;
+      padding: 24px;
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    .card {
+      max-width: 420px;
+      text-align: center;
+    }
+    .heart {
+      width: 56px;
+      height: 56px;
+      border-radius: 999px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #0b4a3a, #c9a227);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #0b4a3a;
+      margin: 0 0 8px;
+    }
+    p {
+      font-size: 14px;
+      color: #6b7a6d;
+      line-height: 1.5;
+      margin: 0 0 20px;
+    }
+    button {
+      background: #0b4a3a;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: #0f6b52; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">♥</div>
+    <h1>You're offline</h1>
+    <p>
+      Looks like there's no connection right now. Your wedding planning data
+      lives safely in the cloud, so nothing is lost — reconnect and this
+      page will take you right back in.
+    </p>
+    <button onclick="window.location.href='/dashboard'">Try again</button>
+  </div>
+</body>
+</html>

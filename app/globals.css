@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent any accidental horizontal scroll on mobile from a single
+     overflowing element pushing the viewport wider than the screen. */
+  overflow-x: hidden;
+  width: 100%;
+}
+body {
+  @apply bg-ivory dark:bg-charcoal text-[#22281f] dark:text-[#e9dfc0] font-body;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+/* Respect the iPhone notch / home-indicator safe areas everywhere they matter. */
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-left { padding-left: env(safe-area-inset-left); }
+.safe-right { padding-right: env(safe-area-inset-right); }
+
+.field-input {
+  @apply w-full px-3 py-2 rounded-xl outline-none border border-transparent
+    bg-[#f4efe0] dark:bg-[#1c2420] focus:border-gold transition-colors;
+  /* 16px minimum stops iOS Safari from auto-zooming the page when a field
+     is focused — smaller than this and iOS force-zooms on tap. */
+  font-size: 16px;
+}
+@screen md {
+  .field-input {
+    font-size: 0.875rem; /* text-sm, restored once we're past mobile widths */
+  }
+}
+
+@keyframes confettiFall {
+  to { top: 105%; transform: rotate(720deg); }
+}

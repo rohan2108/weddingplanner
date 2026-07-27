@@ -1,8 +1,11 @@
 import { cn } from "@/lib/utils";
 
-export function Card({ children, className }: { children: React.ReactNode; className?: string }) {
+export function Card({
+  children, className, style,
+}: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
   return (
     <div
+      style={style}
       className={cn(
         "rounded-2xl bg-white/90 dark:bg-[#1c2420] border border-[#e7ddc4] dark:border-[#2c362f]",
         "shadow-[0_1px_3px_rgba(0,0,0,0.06)] hover:shadow-[0_4px_16px_rgba(201,162,39,0.18)]",

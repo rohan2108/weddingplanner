@@ -118,7 +118,7 @@ export function DashboardClient({
       </div>
 
       {overdueBookings.length > 0 && (
-        <Card className="p-4 border-l-4 flex items-center justify-between gap-3" style={{ borderLeftColor: "#c0392b" } as any}>
+        <Card className="p-4 border-l-4 flex items-center justify-between gap-3" style={{ borderLeftColor: "#c0392b" }}>
           <div className="flex items-start gap-3">
             <AlertTriangle size={20} className="text-[#c0392b] mt-0.5 shrink-0" />
             <div>

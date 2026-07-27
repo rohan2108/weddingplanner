@@ -103,7 +103,7 @@ export function BookingsClient({ initialEvents, initialBookings }: { initialEven
       </Card>
 
       {overdue.length > 0 && (
-        <Card className="p-4 border-l-4" style={{ borderLeftColor: "#c0392b" } as any}>
+        <Card className="p-4 border-l-4" style={{ borderLeftColor: "#c0392b" }}>
           <p className="text-sm font-semibold text-[#c0392b] flex items-center gap-2 mb-1"><AlertTriangle size={15} /> Needs attention now</p>
           <p className="text-sm text-[#6b7a6d] dark:text-[#9caa9d]">{overdue.map((b) => b.category).join(", ")} — past the ideal booking window and still not booked.</p>
         </Card>

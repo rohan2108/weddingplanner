@@ -175,7 +175,7 @@ export function BudgetClient({ initialEvents, initialBudget }: { initialEvents: 
       <SectionTitle sub="Switch tabs above (Anushka / Both / Rohan) to see each budget separately">Budget</SectionTitle>
 
       {error && (
-        <Card className="p-3 border-l-4 flex items-center gap-2" style={{ borderLeftColor: "#c0392b" }}>
+        <Card className="p-3 border-l-4 flex items-center gap-2" border-l-red-600: "#c0392b" }}>
           <AlertTriangle size={16} className="text-[#c0392b] shrink-0" />
           <p className="text-sm text-[#c0392b]">{error}</p>
         </Card>

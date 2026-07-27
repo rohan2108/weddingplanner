@@ -68,7 +68,7 @@ export function ShoppingClient({ initialEvents, initialShopping }: { initialEven
       <SectionTitle sub="Type an item name and hit Enter — organized by wedding function">Shopping list</SectionTitle>
 
       {error && (
-        <Card className="p-3 border-l-4 flex items-center gap-2" style={{ borderLeftColor: "#c0392b" }}>
+        <Card className="p-3 border-l-4 flex items-center gap-2" border-l-red-600: "#c0392b" }}>
           <AlertTriangle size={16} className="text-[#c0392b] shrink-0" />
           <p className="text-sm text-[#c0392b]">{error}</p>
         </Card>

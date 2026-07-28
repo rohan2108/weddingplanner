@@ -83,7 +83,7 @@ export function TasksClient({
     if (!form.name.trim() || !form.eventId) return;
     try {
       await addTask(form);
-      setForm({ name: "", eventId: initialEvents[0]?.id || "", assigneeName: "", priority: "Medium", dueDate: "", category: "", description: "" });
+      setForm({ name: "", eventId: initialEvents[0]?.id || "", assigneeName: "", priority: "Medium", dueDate: "", category: "", description: "", side: "" });
       setShowNew(false);
       setError(null);
     } catch (e: any) {

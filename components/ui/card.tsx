@@ -8,11 +8,22 @@ export function Card({ className, style, ...props }: CardProps) {
   );
 }
 
-export function SectionTitle({ title }: { title: string }) {
+export function SectionTitle({
+  children,
+  sub,
+}: {
+  children: React.ReactNode;
+  sub?: string;
+}) {
   return (
-    <h2 className="text-lg font-semibold mb-4">
-      {title}
-    </h2>
+    <div>
+      <h2 className="text-lg font-semibold">{children}</h2>
+      {sub && (
+        <p className="text-sm text-gray-500 mt-1">
+          {sub}
+        </p>
+      )}
+    </div>
   );
 }
 

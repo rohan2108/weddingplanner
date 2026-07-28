@@ -7,6 +7,13 @@ import { Download, Share, X, Plus } from "lucide-react";
 //   event and shows a real "Install app" button that triggers the OS prompt.
 // - iOS Safari: there is no install-prompt API at all, so instead we show a
 //   small dismissible banner with the manual "Share -> Add to Home Screen" steps.
+// iOS Safari exposes a non-standard `navigator.standalone` flag with no
+// official TS lib.dom definition — this small interface extension is the
+// correct way to type it (no bare `any` needed anywhere).
+interface IOSNavigator extends Navigator {
+  standalone?: boolean;
+}
+
 export function InstallAppPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
   const [showAndroidButton, setShowAndroidButton] = useState(false);
@@ -15,7 +22,8 @@ export function InstallAppPrompt() {
 
   useEffect(() => {
     const isStandalone =
-      window.matchMedia("(display-mode: standalone)").matches || (window.navigator).standalone === true;
+      window.matchMedia("(display-mode: standalone)").matches ||
+      (window.navigator as IOSNavigator).standalone === true;
     if (isStandalone) return; // already installed / running as an app — nothing to show
 
     if (localStorage.getItem("wp-install-dismissed") === "1") {

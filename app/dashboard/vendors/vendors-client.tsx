@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { Plus, Phone, Trash2 } from "lucide-react";
 import { Card, SectionTitle } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
-import type { Vendor } from "@/lib/types";
+import type { Vendor, Side } from "@/lib/types";
 import { currency, SIDE_COLORS } from "@/lib/utils";
 import { useSide, matchesSide } from "@/lib/side-context";
 import { addVendor, updateVendor, deleteVendor } from "./actions";

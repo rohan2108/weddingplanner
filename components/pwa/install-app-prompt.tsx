@@ -15,7 +15,7 @@ export function InstallAppPrompt() {
 
   useEffect(() => {
     const isStandalone =
-      window.matchMedia("(display-mode: standalone)").matches || (window.navigator as any).standalone === true;
+      window.matchMedia("(display-mode: standalone)").matches || (window.navigator).standalone === true;
     if (isStandalone) return; // already installed / running as an app — nothing to show
 
     if (localStorage.getItem("wp-install-dismissed") === "1") {

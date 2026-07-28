@@ -34,7 +34,7 @@ export function GuestsClient({ initialGuests }: { initialGuests: Guest[] }) {
   }
   function patchNow(id: string, patch: Partial<Guest>) {
     localPatch(id, patch);
-    updateGuest(id, patch as any).catch(() => router.refresh());
+    updateGuest(id, patch).catch(() => router.refresh());
   }
 
   return (

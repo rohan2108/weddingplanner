@@ -35,7 +35,7 @@ export function ShoppingClient({ initialEvents, initialShopping }: { initialEven
   async function commit(id: string, patch: Partial<ShoppingItem>) {
     localPatch(id, patch);
     try {
-      await updateShoppingItem(id, patch as any);
+      await updateShoppingItem(id, patch);
       setError(null);
     } catch (e: any) {
       setError(e.message);
@@ -68,7 +68,7 @@ export function ShoppingClient({ initialEvents, initialShopping }: { initialEven
       <SectionTitle sub="Type an item name and hit Enter — organized by wedding function">Shopping list</SectionTitle>
 
       {error && (
-        <Card className="p-3 border-l-4 flex items-center gap-2" border-l-red-600: "#c0392b" }}>
+        <Card className="p-3 border-l-4 flex items-center gap-2" >
           <AlertTriangle size={16} className="text-[#c0392b] shrink-0" />
           <p className="text-sm text-[#c0392b]">{error}</p>
         </Card>

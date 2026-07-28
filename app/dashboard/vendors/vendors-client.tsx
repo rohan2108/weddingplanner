@@ -30,7 +30,7 @@ export function VendorsClient({ initialVendors }: { initialVendors: Vendor[] }) 
   }
   function patchNow(id: string, patch: Partial<Vendor>) {
     localPatch(id, patch);
-    updateVendor(id, patch as any).catch(() => router.refresh());
+    updateVendor(id, patch).catch(() => router.refresh());
   }
 
   return (
@@ -50,7 +50,7 @@ export function VendorsClient({ initialVendors }: { initialVendors: Vendor[] }) 
             </div>
             <div className="flex items-center gap-2">
               <input defaultValue={v.category} onBlur={(e) => patchNow(v.id, { category: e.target.value })} className="text-xs bg-[#f4efe0] dark:bg-[#1c2420] rounded-lg px-2 py-1 outline-none flex-1" />
-              <select value={v.side} onChange={(e) => patchNow(v.id, { side: e.target.value as any })} className="text-xs bg-[#f4efe0] dark:bg-[#1c2420] rounded-lg px-1 py-1 outline-none" style={{ color: SIDE_COLORS[v.side] }}>
+              <select value={v.side} onChange={(e) => patchNow(v.id, { side: e.target.value })} className="text-xs bg-[#f4efe0] dark:bg-[#1c2420] rounded-lg px-1 py-1 outline-none" style={{ color: SIDE_COLORS[v.side] }}>
                 <option value="Both">Both</option>
                 <option value="Bride">Anushka</option>
                 <option value="Groom">Rohan</option>

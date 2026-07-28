@@ -48,7 +48,7 @@ export function BookingsClient({ initialEvents, initialBookings }: { initialEven
     setBookings((prev) => prev.map((b) => (b.id === id ? { ...b, ...patch } : b)));
   }
   function commit(id: string, patch: Partial<Booking>) {
-    updateBooking(id, patch as any).catch(() => router.refresh());
+    updateBooking(id, patch).catch(() => router.refresh());
   }
   function patchNow(id: string, patch: Partial<Booking>) {
     localPatch(id, patch);
@@ -103,7 +103,7 @@ export function BookingsClient({ initialEvents, initialBookings }: { initialEven
       </Card>
 
       {overdue.length > 0 && (
-        <Card className="p-3 border-l-4 border-l-red-600 flex items-center gap-2">
+        <Card className="p-4 border-l-4 border-[#c0392b]" >
           <p className="text-sm font-semibold text-[#c0392b] flex items-center gap-2 mb-1"><AlertTriangle size={15} /> Needs attention now</p>
           <p className="text-sm text-[#6b7a6d] dark:text-[#9caa9d]">{overdue.map((b) => b.category).join(", ")} — past the ideal booking window and still not booked.</p>
         </Card>
@@ -155,7 +155,7 @@ export function BookingsClient({ initialEvents, initialBookings }: { initialEven
                     </select>
                   </Field>
                   <Field label="Side">
-                    <select value={b.side} onChange={(e) => patchNow(b.id, { side: e.target.value as any })} className="field-input">
+                    <select value={b.side} onChange={(e) => patchNow(b.id, { side: e.target.value })} className="field-input">
                       <option value="Both">Both sides</option>
                       <option value="Bride">Anushka's side</option>
                       <option value="Groom">Rohan's side</option>

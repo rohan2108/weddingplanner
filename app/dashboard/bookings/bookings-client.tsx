@@ -155,7 +155,9 @@ export function BookingsClient({ initialEvents, initialBookings }: { initialEven
                     </select>
                   </Field>
                   <Field label="Side">
-                    <select value={b.side} onChange={(e) => patchNow(b.id, { side: e.target.value })} className="field-input">
+                    <select value={b.side} oonChange={(e) =>
+                                              patchNow(b.id, { side: e.target.value as "Both" | "Bride" | "Groom" })
+                                            } className="field-input">
                       <option value="Both">Both sides</option>
                       <option value="Bride">Anushka's side</option>
                       <option value="Groom">Rohan's side</option>
